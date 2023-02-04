@@ -8,7 +8,7 @@
     <div class="row">
         <h1>Slug Alert</h1>
         <img 
-            src="../../assets/img/slug.png" 
+            src="../../public/img/slug.png" 
             alt="Bananan Slug"
             style="width: 4.75em;
                     height: 4.5em">
