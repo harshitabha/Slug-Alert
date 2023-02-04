@@ -1,4 +1,4 @@
-import App from './Landing.svelte'
+import App from './map.svelte'
 
 const app = new App({
 	target: document.body,
