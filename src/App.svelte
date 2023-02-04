@@ -22,16 +22,20 @@
 		},
 	]
 
+	let showModal = false;
+
 	const delPerson = (id) => {
 		people = people.filter((person) => person.id != id)
 	};
+
+	const toggleModal = () => { showModal = !showModal; };
 </script>
-<!--
-	Custome Svelte Component that ships w the app
--->
-<Modal />
+
+<!-- if the prop name is the same is the var name then it will automatically set that prop val to that var -->
+<Modal message="Sign up for offers" {showModal} on:click={toggleModal}/>
 
 <main>
+	<button on:click={toggleModal}>Toggle</button>
 	<!-- 
 		like a for each loop in js
 		to use a each block every element being looped through must have a unique id
