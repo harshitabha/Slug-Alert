@@ -1,6 +1,6 @@
 <script>
-	import LongButton from "../components/LongButton.svelte";
-    import InputField from "../components/InputField.svelte";
+	import LongButton from "./components/LongButton.svelte";
+    import InputField from "./components/InputField.svelte";
 
 </script>
 
