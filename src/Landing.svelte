@@ -9,10 +9,10 @@
     <div class="row" style="margin-bottom: 5em;">
         <h1>Slug Alert</h1>
         <img 
-            src="../../public/img/slug.png" 
+            src="./img/slug.png" 
             alt="Bananan Slug"
             style="width: 4.75em;
-                    height: 4.5em">
+                    height: 4.75em">
     </div>
 
     <!-- user info -->
@@ -20,7 +20,8 @@
         <InputField 
             type="text"
             fieldName="Name"
-            fieldID="userName"/>
+            fieldID="userName"
+            placeholder="ex: John Doe"/>
         <InputField 
             type="text"
             fieldName="Phone Number"
