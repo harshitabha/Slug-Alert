@@ -1,20 +1,55 @@
 <script>
-	// export let name;
-	let name = "Slug Alert";
-	let total = 0
+	import Modal from "./Modal.svelte";
 
-	const update = () => {
-		total += 1
+	let people = [
+		{
+			name: 'Yoshi',
+			beltColor: 'black',
+			age: 25,
+			id: 1
+		},
+		{
+			name: 'Mario',
+			beltColor: 'orange',
+			age: 45,
+			id: 2
+		},
+		{
+			name: 'Luigi',
+			beltColor: 'brown',
+			age: 35,
+			id: 3
+		},
+	]
+
+	const delPerson = (id) => {
+		people = people.filter((person) => person.id != id)
 	};
 </script>
 <!--
 	Custome Svelte Component that ships w the app
 -->
+<Modal />
+
 <main>
-	<h1>{name}!</h1>
-	<p>This responds</p>
-	<button on:click={update} id="adder">Add</button>
-	<p id="txt">{total}</p>
+	<!-- 
+		like a for each loop in js
+		to use a each block every element being looped through must have a unique id
+	 -->
+	{#each people as p (p.id)}
+		<div>
+			<h4>{p.name}</h4>
+			{#if p.beltColor === "black"}
+				<p><strong>Master</strong></p>
+			{/if}
+			<p>{p.age} years old, {p.beltColor} belt.</p>
+			<button on:click={() => delPerson(p.id)}>Delete Person</button>
+		</div>
+	<!-- In case the people arr is empty -->
+	{:else}
+		<p>No people to show</p>
+	{/each}
+	
 </main>
 
 <style>
@@ -31,6 +66,17 @@
 		font-size: 4em;
 		font-weight: 100;
 	}
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	}
+
+	/* to center the input field */
+	input {margin-top: 1em;}
 
 	@media (min-width: 640px) {
 		main {
