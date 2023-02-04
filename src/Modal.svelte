@@ -7,7 +7,6 @@
 
     // this prop/ var is being set from outside the component
     // can be assigned a default val just incase
-    export let message = "This is a Modal";
     export let showModal = false;
     export let isPromo = false;
 </script>
@@ -19,8 +18,9 @@
 {#if showModal}
     <!-- by not defining what happens on on click we forward that task to when the component is used -->
     <div class="backdrop" on:click|self>
-        <div class="modal" class:promo={isPromo}>
-            <p>{message}</p>
+        <div class="modal" class:promo={isPromo}> 
+            <!-- looks for any child content being passed in through  -->
+            <slot></slot>
         </div>
     </div>
 {/if}

@@ -43,7 +43,7 @@
 		<input type="text" placeholder="Enter the belt color" id="beltC">
 	</div>
 
-	<button>Add Person</button>
+	<button style="margin-top: 1em;">Add Person</button>
 </Modal>
 
 <main>
