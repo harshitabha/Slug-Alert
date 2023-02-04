@@ -51,7 +51,7 @@
 <body>
     <div id="box">
         <div class="flex3">
-            <img id="image" src={ src==""?"./images/defaultPfp.png":src } alt="Test Person's face" height=75px, width=75px>
+            <img id="image" src={ src==""?("https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name):src } alt="Test Person's face" height=75px, width=75px>
             <br/>
             <div class="flex2">
                 <div id="text">{name}</div>
