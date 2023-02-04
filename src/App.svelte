@@ -68,8 +68,10 @@
   }
 
   .label {
-   position: relative;
-   top: -1px;
+    z-index: 10;
+    transition: color 0.4s;
+    position: relative;
+    top: -1px;
   }
 
   .transition {   
