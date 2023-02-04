@@ -32,10 +32,22 @@
 </script>
 
 <!-- if the prop name is the same is the var name then it will automatically set that prop val to that var -->
-<Modal message="Sign up for offers" {showModal} on:click={toggleModal}/>
+<Modal {showModal} on:click={toggleModal}>
+	<h3>Add a New Person</h3>
+	<div class="row">
+		<label for="name">Name</label>
+		<input type="text" placeholder="Enter a name" id="name">
+	</div>
+	<div class="row">
+		<label for="beltC">Belt Color</label>
+		<input type="text" placeholder="Enter the belt color" id="beltC">
+	</div>
+
+	<button>Add Person</button>
+</Modal>
 
 <main>
-	<button on:click={toggleModal}>Toggle</button>
+	<button on:click={toggleModal}>Add Person</button>
 	<!-- 
 		like a for each loop in js
 		to use a each block every element being looped through must have a unique id
