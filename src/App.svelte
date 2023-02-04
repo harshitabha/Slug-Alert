@@ -1,14 +1,25 @@
 <script>
-	export let name;
 </script>
 
 <main>
-	<h1>SlugAlert</h1>
-	<button>
-  <span class="transition"></span>
-  <span class="gradient"></span>
-  <span class="label">ALERT</span>
-  </button>
+  <div class="flex-container">
+    <h1>SlugAlert</h1>
+    <img
+      id="slugLogo"
+      src= "./images/slug.png" alt="slug image"
+    />  
+  </div>
+<div class="container">
+  <div class="vertical-center">
+    <button>
+       <span class="transition"></span>
+       <span class="gradient"></span>
+       <span class="label">ALERT</span>
+    </button>
+  </div>
+</div>
+
+
 </main>
 
 <style>
@@ -22,7 +33,16 @@
 		font-family: 'Rubik', sans-serif;
 		color: #00575F;
 	}
-	button {
+  .flex-container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  #slugLogo{
+    width:40px;
+    height:40px;
+  }
+  button {
 	 border: 5px solid black;
 	 font-family: 'Rubik', sans-serif;
    font-size: 37px;
@@ -31,7 +51,7 @@
    font-weight: 500;
    background: #FFE8E8;
    color: #00575F;
-   position: relative;
+   position: absolute;
    overflow: hidden;
   }
 
@@ -61,12 +81,10 @@
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
-	 transform: scale(0.9);
   }
+
   button:active .transition{
    width: 14em;
    height: 14em;
  }
-
-	}
 </style>
