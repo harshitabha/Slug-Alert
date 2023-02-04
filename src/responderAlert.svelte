@@ -40,20 +40,18 @@
         margin-left: auto;
         margin-right: 0;
     }
-</style>
 
-<script>
-    let name = "Person Person";
-    let time = 15;
-    let distance = 0.5;
-    let src = "./images/slug.png";
-    // getElementById('text').innerHTML = "hello";
-</script>
+    #image {
+        margin-right: 15px;
+        margin-left: 0px;
+        border-radius: 10px;
+    }
+</style>
 
 <body>
     <div id="box">
         <div class="flex3">
-            <img {src} alt="Test Person's face" height=65px>
+            <img id="image" src={ src==""?"./images/defaultPfp.png":src } alt="Test Person's face" height=75px, width=75px>
             <br/>
             <div class="flex2">
                 <div id="text">{name}</div>
@@ -72,3 +70,10 @@
         </div>
     </div>
 </body>
+
+<script>
+    export let name = "Person Person";
+    export let time = 15;
+    export let distance = 0.5;
+    export let src = "./images/slug.png";
+</script>
