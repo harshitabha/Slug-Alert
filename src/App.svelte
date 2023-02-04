@@ -1,31 +1,10 @@
 <script>
-	export let name;
+	import Landing from "./logIn/Landing.svelte";
 </script>
 
-<main>
-	<h1>SlugAlert</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<Landing />
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-		font-family: 'Rubik', sans-serif;
-		color: #00575F;
-}
-	h1 {
-		color: #00575F;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	
 </style>
