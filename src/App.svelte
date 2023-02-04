@@ -10,13 +10,11 @@
     />  
   </div>
 <div class="container">
-  <div class="vertical-center">
-    <button>
-       <span class="transition"></span>
-       <span class="gradient"></span>
-       <span class="label">ALERT</span>
-    </button>
-  </div>
+  <button>
+     <span class="transition"></span>
+     <span class="gradient"></span>
+     <span class="label">ALERT</span>
+  </button>
 </div>
 
 
@@ -41,6 +39,10 @@
   #slugLogo{
     width:40px;
     height:40px;
+  }
+  .container{
+    display: flex;
+    justify-content:center;
   }
   button {
 	 border: 5px solid black;
@@ -71,20 +73,21 @@
   }
 
   .transition {   
-	 transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-   transition-duration: 40000ms;
-   background-color: #930000;
-   border-radius: 9999px;
-   width: 0;
-   height: 0;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%, -50%);
+      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      transition-duration: 15s;
+      background-color: #ff6363;
+      border-radius: 9999px;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
   }
 
   button:active .transition{
-   width: 14em;
-   height: 14em;
- }
+     color:white;
+     width: 14em;
+     height: 14em;
+  }
 </style>
