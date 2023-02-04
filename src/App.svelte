@@ -3,21 +3,22 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>SlugAlert</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 	main {
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
-	}
-
+		font-family: 'Rubik', sans-serif;
+		color: #00575F;
+}
 	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
+		color: #00575F;
 		font-size: 4em;
 		font-weight: 100;
 	}
