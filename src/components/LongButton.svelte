@@ -12,6 +12,7 @@
         width: 70%;
         border-radius: 1.5em;
         width: 100%;
+        margin-top: 2em;
 
         font-size: 1.3em;
         font-family: 'Open Sans', sans-serif;
