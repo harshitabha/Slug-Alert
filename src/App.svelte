@@ -1,23 +1,24 @@
 <script>
+  let name = 'bean';
 </script>
 
 <main>
   <div class="flex-container">
-    <h1>SlugAlert</h1>
+    <input type="text" bind:value(name)>
+
+    <h1>Hi {name}, Welcome to SlugAlert</h1>
     <img
       id="slugLogo"
       src= "./images/slug.png" alt="slug image"
     />  
   </div>
-<div class="container">
-  <button>
-     <span class="transition"></span>
-     <span class="gradient"></span>
-     <span class="label">ALERT</span>
-  </button>
-</div>
-
-
+  <div class="container">
+    <button>
+      <span class="transition"></span>
+      <span class="gradient"></span>
+      <span class="label">ALERT</span>
+    </button>
+  </div>
 </main>
 
 <style>
@@ -46,6 +47,7 @@
   }
   button {
 	 border: 5px solid black;
+   border-color: #00575F;
 	 font-family: 'Rubik', sans-serif;
    font-size: 37px;
    border-radius: 9999px;
@@ -56,7 +58,9 @@
    position: absolute;
    overflow: hidden;
   }
-
+  button:active span{
+     color: #F2FEFF;
+  }
   .gradient {
    position: absolute;
    width: 100%;
@@ -69,16 +73,18 @@
 
   .label {
     z-index: 10;
-    transition: color 0.4s;
     position: relative;
     top: -1px;
   }
+  .transtionLabel{
+      
 
+  }
   .transition {   
       transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      transition-duration: 15s;
+      transition-duration: 3s;
       background-color: #ff6363;
-      border-radius: 9999px;
+      border-radius: 999px;
       width: 0;
       height: 0;
       position: absolute;
@@ -88,7 +94,7 @@
   }
 
   button:active .transition{
-     color:white;
+     /* color:white; */
      width: 14em;
      height: 14em;
   }
