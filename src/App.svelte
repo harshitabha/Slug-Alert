@@ -1,10 +1,20 @@
 <script>
-	export let name;
-</script>
+	// export let name;
+	let name = "Slug Alert";
+	let total = 0
 
+	const update = () => {
+		total += 1
+	};
+</script>
+<!--
+	Custome Svelte Component that ships w the app
+-->
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>{name}!</h1>
+	<p>This responds</p>
+	<button on:click={update} id="adder">Add</button>
+	<p id="txt">{total}</p>
 </main>
 
 <style>
