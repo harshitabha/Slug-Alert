@@ -1,7 +1,7 @@
 <script>
-	import Button from "./components/Button.svelte";
-    import InputField from "./components/InputField.svelte";
-    import { writeToDB } from "./firebaseConfig"
+	import Button from "../components/Button.svelte";
+    import InputField from "../components/InputField.svelte";
+    import { writeToDB } from "../firebaseConfig"
     // const firebase = require("./util/firebase")
     // writeToDB({"name": "cruzhacks"})
 
