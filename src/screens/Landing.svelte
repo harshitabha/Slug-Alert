@@ -6,77 +6,18 @@
     // const firebase = require("./util/firebase")
     // writeToDB({"name": "cruzhacks"})
 
-    let sClick = false;
-    let rClick = false
-    let marginT= "0.5em";
-
-    const sClicked = () => { 
-        sClick = !sClick;
-        if(rClick) rClick = !rClick; 
-        console.log(sClick)
-    };
-    const rClicked = (id) => { 
-        rClick = !rClick; 
-        if(sClick) sClick = !sClick; 
-        console.log(id)
-    };
-
-    let userBtns = [
-        {btnTxt: "Student",
-        id:"student", 
-        clickEvent:sClicked,
-        clicked:sClick},
-        {btnTxt: "Responder",
-        id:"responder", 
-        clickEvent:rClicked,
-        clicked:rClick},
-    ];
-
-    let uName;
-    let uNumber;
-    let uType;
-    const addUser = (e) => {
-        console.log("clicked")
-        const formData = new FormData(e.target);
-
-        forEach(ele in formData)
-        {
-            console.log(ele);
-        }; 
-    };
-    function loadScript(src) {
-        let script = document.createElement('script');
-        script.src = src;
-        document.head.append(script);
-    }
-
-    let chooser = 'none';
-    export function getChoose() {
-        return chooser
-    }
-
-    let end = false;
-    let student = false;
-    let responder = false;
-
-    const attemptSubmit = () => {
-        // console.log(chooser)
-        if (chooser == 'student') {
-            end=true;
-            student=true;
-            responder=false;
-        } else if (chooser == 'responder') {
-            end = true;
-            student=false;
-            responder=true;
-        }
-        // writeToDB({
-
-        // });
-    }
+    /*export function getType () {
+        let radio = document.getElementsByName('uType')
+        radio.forEach(({choice}) => {
+            if(choice.checked) return choice.value;
+        })
+    }*/
+    export let uName;
+    export let uNumber;
+    export let uType;
 
 </script>
-<svelte:options accessors />
+
 <main style="display:flex; flex-direction:column;">
     <!-- App Name -->
     <div class="row" style="margin-bottom: 3em;">
@@ -91,28 +32,24 @@
     <!-- user info -->
     <!-- <form on:submit> -->
         <div id="userInfo">
-            <InputField 
-                type="text"
-                fieldName="Name"
-                fieldID="userName"
-                placeholder="ex: John Doe"
-                bind:value = {uName}/>
+            <slot name="userName"></slot>
+            
             <InputField 
                 type="tel"
                 fieldName="Phone Number"
                 fieldID="userPhoneNumber"
                 placeholder="(000)-111-2345"
-                bind:value = {uNumber}/>
+                />
     
             <label for="userType" id="title">User Type</label>
             <div id="userTypesWrapper">
                 <div id="userType">
                     <label for="student" id="label">Student</label>
-                    <input type="radio" bind:group={chooser} id="student" name="uType" value="student">
+                    <input type="radio" value="student" id="student" name="uType">
                 </div>
                 <div id="userType">
                     <label for="responder" id="label">Responder</label>
-                    <input type="radio" bind:group={chooser} id="responder" name="uType" value="responder">
+                    <input type="radio" value="responder" id="responder" name="uType">
                 </div>
             </div>
         

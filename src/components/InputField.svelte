@@ -6,13 +6,8 @@
 </script>
 
 <label for={fieldID}>{fieldName}</label>
-{#if type !== "select"}
-    <input type={type} id={fieldID} placeholder={placeholder}>
-{:else}
-    <select>
-        <slot></slot>
-    </select>
-{/if}
+<input type={type} id={fieldID} placeholder={placeholder}>
+
 
 <style>
     
