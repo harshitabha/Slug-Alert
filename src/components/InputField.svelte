@@ -6,11 +6,17 @@
 </script>
 
 <label for={fieldID}>{fieldName}</label>
-<input type={type} id={fieldID} placeholder={placeholder}>
+{#if type !== "select"}
+    <input type={type} id={fieldID} placeholder={placeholder}>
+{:else}
+    <select>
+        <slot></slot>
+    </select>
+{/if}
 
 <style>
     
-    input {
+    input, select, option{
         border-radius: 5px;
         background-color: #cdd4d5ab;
         margin: 0.5em 0;
