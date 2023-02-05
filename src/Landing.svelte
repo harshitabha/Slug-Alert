@@ -1,18 +1,20 @@
 <script>
 	import Button from "./components/Button.svelte";
     import InputField from "./components/InputField.svelte";
+    import UserInfo from "./components/UserInfo.svelte";
 
     let sClick = false;
+    let rClick = false
     let marginT= "0.5em";
 
     const sClicked = (id) => { 
         sClick = !sClick;
         if(rClick) rClick = !rClick; 
-        console.log(id)
+        console.log(sClick)
     };
-    let rClick = false
     const rClicked = (id) => { 
         rClick = !rClick; 
+        // if the other btn is clicked disable it
         if(sClick) sClick = !sClick; 
         console.log(id)
     };
@@ -27,7 +29,6 @@
         clickEvent:rClicked,
         clicked:rClick},
     ];
-
 </script>
 
 <main style="display:flex; flex-direction:column;">
@@ -43,28 +44,38 @@
 
     <!-- user info -->
     <div id="userInfo">
-        <InputField 
-            type="text"
-            fieldName="Name"
-            fieldID="userName"
-            placeholder="ex: John Doe"/>
-        <InputField 
-            type="text"
-            fieldName="Phone Number"
-            fieldID="userPhoneNumber"
-            placeholder="(000)-111-2345"/>
-
-        <label for="userType">User Type</label>
-        <div class="row" style="justify-content: left; gap: 2em">
-            {#each userBtns as btn (btn.id)}
-                <Button 
-                    btnTxt={btn.btnTxt}
-                    clicked={btn.clicked}
-                    on:click={() => btn.clickEvent(btn.id)}
-                    {marginT}/>
-
-            {/each}
-        </div>
+        <!-- <form> -->
+            <InputField 
+                type="text"
+                fieldName="Name"
+                fieldID="userName"
+                placeholder="ex: John Doe"/>
+            <InputField 
+                type="text"
+                fieldName="Phone Number"
+                fieldID="userPhoneNumber"
+                placeholder="(000)-111-2345"/>
+        
+            <InputField 
+                type="select"
+                fieldID="userInfo"
+                fieldName="User Type">
+                <option selected disabled hidden>What type of user are you</option>
+                <option value="student">Student</option>
+                <option value="responder">Responder</option>
+            </InputField>
+                <!-- <label for="userType">User Type</label>
+            <div class="row" style="justify-content: left; gap: 2em">
+                {#each userBtns as btn (btn.id)}
+                    <Button 
+                        btnTxt={btn.btnTxt}
+                        clicked={btn.clicked}
+                        on:click={() => btn.clickEvent(btn.id)}
+                        {marginT}/>
+        
+                {/each}
+            </div> -->
+        <!-- </form>   -->
     
         <Button btnTxt="Continue" classType={"outline"} id="logInBtn"/>
     </div>
@@ -84,19 +95,17 @@
         height: 100%;
 
     }
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: fit-content;
-    }
+    
 
     #userInfo {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 70%;
+    }
+
+    option {
+        width: 100%;
     }
 
 </style>
