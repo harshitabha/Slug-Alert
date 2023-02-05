@@ -2,10 +2,9 @@
     let name = 'bean';
 </script>
 
-<main>
+<body>
   <div class="flex-container">
-    <input type="text" bind:value={name}>
-    <h1>Hi {name}, Welcome to SlugAlert</h1>
+    <h1>Welcome {name}</h1>
     <img
       id="slugLogo"
       src= "./images/slug.png" alt="slug image"
@@ -18,20 +17,18 @@
       <span class="label">ALERT</span>
     </button>
   </div>
-</main>
+</body>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
-	main {
-      text-align: center;
-      padding: 1em;
-      width: 100%;
-      margin: 0 auto;
+	body {
       background-color:#F2FEFF;
-      font-family: 'Rubik', sans-serif;
-      color: #00575F;
 	}
   .flex-container{
+    color: #00575F;
+    text-align: center;
+      font-size: 20px;
+      padding: 1em;
+      margin-top: 40%;
       display: flex;
       justify-content:center;
       align-items: center;
@@ -41,14 +38,14 @@
       height:40px;
   }
   .container{
+      margin-top: 40%;
       display: flex;
       justify-content:center;
   }
   button {
-      border: 5px solid black;
-      border-color: #00575F;
-      font-family: 'Rubik', sans-serif;
-      font-size: 37px;
+      box-shadow:  -16px 16px 32px #decaca,
+      16px -16px 32px #ffffff;
+      font-size: 40px;
       border-radius: 9999px;
       padding: 2.3em 1.2em;
       font-weight: 500;
