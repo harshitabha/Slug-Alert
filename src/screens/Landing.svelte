@@ -70,6 +70,9 @@
             student=false;
             responder=true;
         }
+        // writeToDB({
+
+        // });
     }
 
 </script>
@@ -86,7 +89,7 @@
     </div>
 
     <!-- user info -->
-    <form>
+    <!-- <form on:submit> -->
         <div id="userInfo">
             <InputField 
                 type="text"
@@ -115,18 +118,15 @@
         
             <!-- <Button btnTxt="Continue" classType={"outline"} id="logInBtn" on:click={(uName, uNumber, uType) => addUser}/> -->
         </div>
-    </form>
+    <!-- </form> -->
 
-    <button type="submit" class="outline" id="continue" on:click={() => attemptSubmit()}>
+    <button type="submit" class="outline" id="continue" on:click>
         Continue
     </button>
-    <!-- <div id="btns">
-        <LongButton btnTxt="Log In" grad={true} id="logInBtn"/> <br>
-        <LongButton btnTxt="Sign In" outline={true} id="signInBtn"/>
-    </div> -->
-    {#if end}
+    
+    <!-- {#if end}
         <App landing={false} rHome={responder} sHome={student} rMap={false}/>
-    {/if}
+    {/if} -->
 
 </main>
 
