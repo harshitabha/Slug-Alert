@@ -68,11 +68,13 @@ button:focus {
 body {
 	background-color: #F2FEFF;
 	font-family: 'NATS', sans-serif;
+	overflow-x:hidden;
 
 }
 h1 {
 	color: #00575F;
-	font-size: 3em;
+	font-size: 2.75em;
+	margin-top: 2em;
 }
 label {
 	margin-bottom: 0.25em;
@@ -104,4 +106,5 @@ input{
 	border-radius: 5px;
 	background-color: #cdd4d5ab;
 	margin: 0.5em 0;
+	width: 100%;
 }

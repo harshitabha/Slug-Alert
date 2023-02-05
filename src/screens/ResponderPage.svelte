@@ -3,7 +3,6 @@
     let text = document.querySelector('#text');
     let userData = [
         {name: "Just Bean", time: 15, dist: .5, pfp: ""},
-        {name: "Person Two", time: 30, dist: 1, pfp: ""},
         {name: "Jeffrey Lastname", time: 20, dist: .25, pfp: ""},
         {name: "Me Myself", time: 5, dist: .3, pfp: ""},
     ]
@@ -15,16 +14,23 @@
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 2em;
         text-align: center;
-        padding-bottom: 15px;
-        padding-top: 15px;
+        padding: 0.5em 0;
         background-color: #F2FEFF;
 	}
     body {
         background-color: #F2FEFF;
         padding: 20px;
-        width:auto;
-        height:auto;
-        position:auto;
+        overflow-x: hidden;
+        height:fit-content;
+        /* position:auto; */
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 85%;
+        align-items: center;
     }
 </style>
 

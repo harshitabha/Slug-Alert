@@ -13,6 +13,9 @@
     import Student from "./screens/Student.svelte";
     import MapHolder from "./screens/mapHolder.svelte";
     import InputField from "./components/InputField.svelte";
+    import Box from "./components/Box.svelte";
+    import {writeToDB} from "./firebaseConfig"
+
     console.log(landingB)
 
     const updateName = (e) => {
@@ -30,11 +33,18 @@
         console.log(uName, uType);
     };
 
-    const openMap = (id) => {
-        rHome = false;
-        rMap = true;
-        console.log("ID IS " + id)
+    let alerted = false;
+    function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+    let randTime = randInt(0, 25);
+    const alert = () => {
+        writeToDB({
+            name: uName,
+            dist: (Math.random()*2).toFixed(2),
+            time: Math.floor(Math.random() * 20) + 1
+        });
+    }; 
     
 </script>
 
@@ -61,11 +71,11 @@
     {/if}
 
     {#if sHome}
-        <Student name={uName}/>
+        <Student name={uName} on:click={alert}/>
     {/if}
 
     {#if rHome}
-        <ResponderPage on:click={(id) => openMap(id)}/>
+        <ResponderPage />
     {/if}
 
     {#if rMap}
@@ -86,7 +96,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        background-color: rgb(195, 201, 201);
+        background-color: #cdd4d5ab;
         border-radius: 5px;
     }
 

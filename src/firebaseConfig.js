@@ -1,6 +1,6 @@
 // import { firebase } from 'firebase/app';
 import { initializeApp  } from "Firebase/app"
-import { getFirestore, collection, addDoc } from  'firebase/firestore'
+import  { getFirestore, collection, addDoc } from 'firebase/firestore'
 
 // import {collection, doc, setDoc} from "firebase/firestore"
 var firebaseConfig = {
@@ -17,7 +17,15 @@ var firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
+const docRef = doc(db, "users");
+const docSnap = await getDoc(docRef);
 
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
 
 export const writeToDB = async (data) => {
     console.log('addDoc');
