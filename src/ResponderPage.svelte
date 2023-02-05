@@ -1,6 +1,6 @@
 <script>
 	import Box from './components/Box.svelte';
-    import Alert from './components/Alert.svelte';
+    import Modal from './components/modal.svelte';
 
     let text = document.querySelector('#text');
     let userData = [
@@ -10,12 +10,14 @@
         {name: "Me Myself", time: 5, dist: .3, id:3},
     ]
     let isActive = userData.map(({e}) => false);
+    let showModal = false;
+
     const boxClicked = (id) => {
         console.log(isActive[id]);
         isActive[id] = !isActive[id]; 
         console.log(isActive[id]);
+        showModal = !showModal;
     }
-
 </script>
 
 <style>
@@ -43,9 +45,9 @@
     <div>
         {#each userData as user (user.id)}
             <Box name={user.name} time={user.time} dist={user.dist} on:click={() => boxClicked(user.id)}/>
-            <Alert modalID={"alert" + user.id} isActive={isActive[user.id]}}>
+            <Modal {showModal}>
                 <p>Sample text</p>
-            </Alert>
+            </Modal>
         {/each}
     </div>
 </body>
