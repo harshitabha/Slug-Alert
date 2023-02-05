@@ -9,10 +9,7 @@
 <input type={type} id={fieldID} placeholder={placeholder}>
 
 <style>
-    label {
-        margin-bottom: 0.25em;
-        /* margin-bottom: 0.5em; */
-    }
+    
     input {
         border-radius: 5px;
         background-color: #cdd4d5ab;
