@@ -2,22 +2,22 @@
     @import url('https://fonts.cdnfonts.com/css/nats');
     #box {
         background-color: #FFE8E8;
-        padding: 10px;
-        border-radius: 10px;
+        padding: 25px;
+        border-radius: 20px;
         /* height: 100px; */
     }
     #text {
         display:inline;
         font-family: 'NATS', sans-serif;
-        font-size: 15px;
-        height: 20px;
+        font-size: 30px;
+        height: 40px;
     }
     #greytext {
         display:inline;
         color:#757575;
         font-family: 'NATS', sans-serif;
-        font-size: 15px;
-        height: 20px;
+        font-size: 30px;
+        height: 40px;
     }
     .flex-container {
         display: flex;
@@ -29,7 +29,6 @@
     .flex2 {
         display: flex;
         flex-direction: column;
-        
         width: 100%;
     }
 
@@ -52,7 +51,7 @@
 <body>
     <div id="box">
         <div class="flex3">
-            <img id="image" src={"https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name} alt="Test Person's face" height=40px, width=40px>
+            <img id="image" src={ src==""?("https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name):src } alt="Test Person's face" height=75px, width=75px>
             <br/>
             <div class="flex2">
                 <div id="text">{name}</div>

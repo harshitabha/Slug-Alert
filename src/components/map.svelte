@@ -80,34 +80,34 @@
 </script>
 
 <style>
-.full-screen {
-    width: 80vw;
-    height: 75vh;
-    border-radius: 25px;
-}
-.containerText {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 10px;
-}
-.containerAll {
-    display: flex;
-    flex-direction: column;
-}
-.title {
-    display:inline;
-    font-family: 'NATS', sans-serif;
-    font-size: 30px;
-    height: 40px;
-}
-.value {
-    display:inline;
-    color:#757575;
-    font-family: 'NATS', sans-serif;
-    font-size: 30px;
-    height: 40px;
-}
+    .full-screen {
+        width: 80vw;
+        height: 75vh;
+        border-radius: 25px;
+    }
+    .containerText {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    .containerAll {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        display:inline;
+        font-family: 'NATS', sans-serif;
+        font-size: 30px;
+        height: 40px;
+    }
+    .value {
+        display:inline;
+        color:#757575;
+        font-family: 'NATS', sans-serif;
+        font-size: 30px;
+        height: 40px;
+    }
 </style>
 
 <div class="containerAll">
