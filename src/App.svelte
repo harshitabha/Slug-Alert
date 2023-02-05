@@ -29,6 +29,12 @@
         else rHome = true;
         console.log(uName, uType);
     };
+
+    const openMap = (id) => {
+        rHome = false;
+        rMap = true;
+        console.log("ID IS " + id)
+    }
     
 </script>
 
@@ -59,7 +65,7 @@
     {/if}
 
     {#if rHome}
-        <ResponderPage />
+        <ResponderPage on:click{}/>
     {/if}
 
     {#if rMap}
