@@ -4,11 +4,10 @@
     let rHome = false; // responder home
     let rMap = false;
 
-    import {onMount} from 'svelte';
     import Landing from "./screens/Landing.svelte";
     import ResponderPage from "./screens/ResponderPage.svelte";
     import Student from "./screens/Student.svelte";
-    import MapHolder from "./mapHolder.svelte";
+    import MapHolder from "./screens/mapHolder.svelte";
     console.log(landingB)
 
     const toggleHome = () => {
@@ -38,7 +37,7 @@
     {/if}
 
     {#if rMap}
-        <MapHolder />
+        <MapHolder ready={true}/>
     {/if}
     
 </body>
