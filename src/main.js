@@ -1,6 +1,6 @@
-import App from './App.svelte';
+import mapHolder from './mapHolder.svelte';
 
-const app = new App({
+const app = new mapHolder({
 	target: document.body,
 	props: {
 		ready: false,
