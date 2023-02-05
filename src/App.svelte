@@ -17,10 +17,12 @@
     display: flex;
     background-color: rgb(217, 255, 255);
     padding: 20px;
-    width: 60vw;
-    height: 70vh;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: 80vw;
+    height: 90vh;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     border-radius: 35px;
     border: 3px solid rgb(200, 230, 230);
     margin: 0;
@@ -29,8 +31,6 @@
 </style>
 
 <body>
-    <div>{ready?'Hello':"Not Hello"}</div>
-
     { #if ready }
         <div id="box">
             <Map></Map>

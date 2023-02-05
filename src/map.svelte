@@ -8,7 +8,9 @@
     let center = {lat: helpLat, lng: helpLng};
     var meLat = 0;
     var meLng = 0;
-   
+    let time = "";
+    let distance = "";
+
     import { onMount } from 'svelte';
    
     onMount(async () => {
@@ -68,6 +70,9 @@
                 })
                 .then((response) => {
                     directionsRenderer.setDirections(response);
+                    console.log(response);
+                    distance = response['routes'][0]['legs'][0]['distance']['text'];
+                    time = response['routes'][0]['legs'][0]['duration']['text'];
                 })
                 .catch((e) => window.alert("Directions request failed due to " + e));
         }
@@ -76,10 +81,45 @@
 
 <style>
 .full-screen {
-    width: 65vw;
-    height: 70vh;
+    width: 80vw;
+    height: 75vh;
     border-radius: 25px;
+}
+.containerText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.containerAll {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display:inline;
+    font-family: 'NATS', sans-serif;
+    font-size: 30px;
+    height: 40px;
+}
+.value {
+    display:inline;
+    color:#757575;
+    font-family: 'NATS', sans-serif;
+    font-size: 30px;
+    height: 40px;
 }
 </style>
 
-<div class="full-screen" bind:this={container}></div>
+<div class="containerAll">
+    <div class="full-screen" bind:this={container}></div>
+    <div class="containerText">
+        <div class="title">Distance</div>
+        <div class="title">:</div>
+        <div class="value">{distance}</div>
+    </div>
+    <div class="containerText">
+        <div class="title">Time</div>
+        <div class="title">:</div>
+        <div class="value">{time}</div>
+    </div>
+</div>
