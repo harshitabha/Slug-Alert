@@ -1,6 +1,7 @@
 <style>
     @import url('https://fonts.cdnfonts.com/css/nats');
     #box {
+        z-index: 9;
         background-color: #FFE8E8;
         padding: 15px;
         border-radius: 10px;
@@ -59,7 +60,7 @@
 </style>
 
 <body>
-    <button id="box">
+    <button id="box" on:click>
         <span class="flex3">
             <img id="image" src={"https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name} alt="Test Person's face" height=40px, width=40px>
             <br/>
@@ -68,7 +69,7 @@
                 <span class="flex-container">
                     <span>
                         <span id="text">Distance : </span> 
-                        <span id="greytext">{distance}</span>
+                        <span id="greytext">{dist}</span>
                     </span>
                 
                     <span class="time">
@@ -84,5 +85,11 @@
 <script>
     export let name = "Person Person";
     export let time = 15;
-    export let distance = 0.5;
+    export let dist = 0.5;
+    const buttonClicked = () => {
+        console.log(name, time, dist)
+    }
+    export let nameOut = name;
+    export let timeOut = time;
+    export let distOut = dist;
 </script>

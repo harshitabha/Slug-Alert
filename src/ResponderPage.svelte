@@ -1,12 +1,21 @@
 <script>
-	import Box from './responderAlert.svelte';
+	import Box from './components/Box.svelte';
+    import Alert from './components/Alert.svelte';
+
     let text = document.querySelector('#text');
     let userData = [
-        {name: "Billy Bob", time: 15, dist: .5, pfp: ""},
-        {name: "Person Two", time: 30, dist: 1, pfp: ""},
-        {name: "Jeffrey Lastname", time: 20, dist: .25, pfp: ""},
-        {name: "Me Myself", time: 5, dist: .3, pfp: ""},
+        {name: "Billy Bob", time: 15, dist: .5, id:0},
+        {name: "Person Two", time: 30, dist: 1, id:1},
+        {name: "Jeffrey Lastname", time: 20, dist: .25, id:2},
+        {name: "Me Myself", time: 5, dist: .3, id:3},
     ]
+    let isActive = userData.map(({e}) => false);
+    const boxClicked = (id) => {
+        console.log(isActive[id]);
+        isActive[id] = !isActive[id]; 
+        console.log(isActive[id]);
+    }
+
 </script>
 
 <style>
@@ -32,8 +41,11 @@
     <h1>Requests for Help</h1>
     <!--function here access user data in click---->
     <div>
-        {#each userData as user}
-            <Box name={user.name} time={user.time} dist={user.time} src={user.pfp}/>
+        {#each userData as user (user.id)}
+            <Box name={user.name} time={user.time} dist={user.dist} on:click={() => boxClicked(user.id)}/>
+            <Alert modalID={"alert" + user.id} isActive={isActive[user.id]}}>
+                <p>Sample text</p>
+            </Alert>
         {/each}
     </div>
 </body>
