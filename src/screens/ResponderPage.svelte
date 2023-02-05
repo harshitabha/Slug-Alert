@@ -1,12 +1,18 @@
 <script>
 	import Box from "../components/Box.svelte";
     let text = document.querySelector('#text');
-    let userData = [
-        {name: "Just Bean", time: 15, dist: .5, pfp: ""},
-        {name: "Person Two", time: 30, dist: 1, pfp: ""},
-        {name: "Jeffrey Lastname", time: 20, dist: .25, pfp: ""},
-        {name: "Me Myself", time: 5, dist: .3, pfp: ""},
+    let alertData = [
+        {name: "Just Bean", time: 15, dist: .5, lat: 36.994693, lng: -122.045489, pfp: "", id: 0},
+        {name: "Person Two", time: 30, dist: 1, lat: 37.014887, lng: -122.064763, pfp: "", id: 1},
+        {name: "Jeffrey Lastname", time: 20, dist: .25, lat: 36.991617, lng: -122.083732, pfp: "", id: 2},
+        {name: "Me Myself", time: 5, dist: .3, lat: 36.994614, lng: -122.001298, pfp: "", id: 3},
     ]
+
+    const userMap = (alert) => {
+        id = alert.id
+
+    }
+
 </script>
 
 <style>
@@ -31,8 +37,8 @@
 <body>
     <h1>Requests for Help</h1>
     <div>
-        {#each userData as user}
-            <Box name={user.name} time={user.time} dist={user.time} src={user.pfp}/>
+        {#each alertData as alert}
+            <Box name={alert.name} time={alert.time} dist={alert.time} src={alert.pfp} on:click/>
         {/each}
     </div>
 </body>

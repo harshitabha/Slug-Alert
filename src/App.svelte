@@ -13,8 +13,13 @@
 
     const toggleHome = () => {
         landingB = false;
-        sHome = true;
+        rHome = true;
     };
+
+    const openMap = (id) => {
+        rHome = false;
+        rMap = true;
+    }
     
 </script>
 
@@ -29,7 +34,7 @@
     {/if}
 
     {#if rHome}
-        <ResponderPage />
+        <ResponderPage on:click={(id) => openMap(id)}/>
     {/if}
 
     {#if rMap}
