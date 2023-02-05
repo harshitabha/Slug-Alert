@@ -1,5 +1,5 @@
 <script>
-	import Box from './responderAlert.svelte';
+	import Box from '../responderAlert.svelte';
     let text = document.querySelector('#text');
     let userData = [
         {name: "Billy Bob", time: 15, dist: .5, pfp: ""},

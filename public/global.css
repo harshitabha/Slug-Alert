@@ -79,3 +79,10 @@ label {
 	margin-top: 0.75em;
 	font-size: 20px;
 }
+
+.outline {
+	background: transparent;
+	border-color: #03747E;
+	border-width: 2px;
+	color: #03747E;
+}

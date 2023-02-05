@@ -2,15 +2,14 @@
     export let btnTxt;
     export let btnWidth = "100%";
     export let marginT = "2em";
-    export let clicked = false;
+    export let btnClass = "outline";
 
     // document.getElementsByTagName("button").style.width = btnWidth;
 
 </script>
 
 <button on:click 
-    class="outline"
-    class:clicked={clicked}
+    class={btnClass}
     style="width: {btnWidth}; margin-top: {marginT};">{btnTxt}</button>
 
 <style>
@@ -30,14 +29,9 @@
         color: white;
     } */
 
-    .outline {
-        background: transparent;
-        border-color: #03747E;
-        border-width: 2px;
-        color: #03747E;
-    }
+    
 
-    .clicked.outline{
+    .clicked{
         background: #009dab;
         border-color: white;
         border-width: 2px;

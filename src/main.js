@@ -1,4 +1,4 @@
-import App from './ResponderPage.svelte'
+import App from './App.svelte'
 
 const app = new mapHolder({
 	target: document.body,
