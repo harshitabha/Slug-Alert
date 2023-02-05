@@ -2,21 +2,29 @@
     @import url('https://fonts.cdnfonts.com/css/nats');
     #box {
         background-color: #FFE8E8;
-        padding: 10px;
+        padding: 15px;
         border-radius: 10px;
+        width:100%
         /* height: 100px; */
     }
     #text {
-        display:inline;
         font-family: 'NATS', sans-serif;
-        font-size: 15px;
+        font-size: 20px;
         height: 20px;
+        justify-content: flex-start;
+    }
+    #textName {
+        display:flex;
+        font-family: 'NATS', sans-serif;
+        font-size: 20px;
+        height: 20px;
+        justify-content: flex-start;
     }
     #greytext {
         display:inline;
         color:#757575;
         font-family: 'NATS', sans-serif;
-        font-size: 15px;
+        font-size: 20px;
         height: 20px;
     }
     .flex-container {
@@ -28,9 +36,10 @@
 
     .flex2 {
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;        
         width: 100%;
+        height:50px;
+        justify-content: space-between;
     }
 
     .flex3 {
@@ -50,31 +59,30 @@
 </style>
 
 <body>
-    <div id="box">
-        <div class="flex3">
+    <button id="box">
+        <span class="flex3">
             <img id="image" src={"https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name} alt="Test Person's face" height=40px, width=40px>
             <br/>
-            <div class="flex2">
-                <div id="text">{name}</div>
-                <div class="flex-container">
-                    <div>
-                        <div id="text">Distance : </div> 
-                        <div id="greytext">{distance}</div>
-                    </div>
+            <span class="flex2">
+                <span id="textName">{name}</span>
+                <span class="flex-container">
+                    <span>
+                        <span id="text">Distance : </span> 
+                        <span id="greytext">{distance}</span>
+                    </span>
                 
-                    <div class="time">
-                        <div id="text">Time : </div> 
-                        <div id="greytext">{time} mins</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <span class="time">
+                        <span id="text">Time : </span> 
+                        <span id="greytext">{time} mins</span>
+                    </span>
+                </span>
+            </span>
+        </span>
+    </button>
 </body>
 
 <script>
     export let name = "Person Person";
     export let time = 15;
     export let distance = 0.5;
-    export let src = "./images/slug.png";
 </script>

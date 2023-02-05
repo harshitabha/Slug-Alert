@@ -30,6 +30,7 @@
 
 <body>
     <h1>Requests for Help</h1>
+    <!--function here access user data in click---->
     <div>
         {#each userData as user}
             <Box name={user.name} time={user.time} dist={user.time} src={user.pfp}/>
