@@ -32,7 +32,7 @@
     <h1>Requests for Help</h1>
     <div>
         {#each userData as user}
-            <Box name={user.name} time={user.time} dist={user.time} src={user.pfp}/>
+            <Box name={user.name} time={user.time} dist={user.time} src={user.pfp} on:click/>
         {/each}
     </div>
 </body>

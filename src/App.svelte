@@ -65,7 +65,7 @@
     {/if}
 
     {#if rHome}
-        <ResponderPage on:click{}/>
+        <ResponderPage on:click={(id) => openMap(id)}/>
     {/if}
 
     {#if rMap}

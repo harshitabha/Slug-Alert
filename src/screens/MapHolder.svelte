@@ -2,11 +2,15 @@
 </script>
 
 <style>
-:global(body) {
-	padding: 10px;
+img {
+    display: flex;
+    max-width: 10%;
+    /* width:10px; */
+    height: auto;
 }
 </style>
 
 <body>
-    <img id="map" src="./img/map.png" alt=""/>
+    <!-- <div id="hi"></div> -->
+    <img src="./img/map.png" alt=""/>
 </body>

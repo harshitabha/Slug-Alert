@@ -49,7 +49,7 @@
 </style>
 
 <body>
-    <div id="box">
+    <div id="box" on:click>
         <div class="flex3">
             <img id="image" src={ src==""?("https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name):src } alt="Test Person's face" height=75px, width=75px>
             <br/>
