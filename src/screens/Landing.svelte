@@ -42,16 +42,7 @@
                 />
     
             <label for="userType" id="title">User Type</label>
-            <div id="userTypesWrapper">
-                <div id="userType">
-                    <label for="student" id="label">Student</label>
-                    <input type="radio" value="student" id="student" name="uType">
-                </div>
-                <div id="userType">
-                    <label for="responder" id="label">Responder</label>
-                    <input type="radio" value="responder" id="responder" name="uType">
-                </div>
-            </div>
+            <slot name="userType"></slot>
         
             <!-- <Button btnTxt="Continue" classType={"outline"} id="logInBtn" on:click={(uName, uNumber, uType) => addUser}/> -->
         </div>

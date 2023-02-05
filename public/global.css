@@ -99,3 +99,9 @@ form {
 	border-width: 2px;
 	color: #03747E;
 }
+
+input{
+	border-radius: 5px;
+	background-color: #cdd4d5ab;
+	margin: 0.5em 0;
+}
