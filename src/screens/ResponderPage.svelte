@@ -41,6 +41,7 @@
             {#each userData as user}
                 <Box name={user.name} time={user.time} dist={user.time} src={user.pfp}/>
             {/each}
+            <slot></slot>
         </div>
     </div>
 </body>

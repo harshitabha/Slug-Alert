@@ -73,7 +73,8 @@ body {
 }
 h1 {
 	color: #00575F;
-	font-size: 3em;
+	font-size: 2.75em;
+	margin-top: 2em;
 }
 label {
 	margin-bottom: 0.25em;

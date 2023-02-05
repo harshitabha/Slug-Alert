@@ -1,5 +1,8 @@
 <script>
-    export let name = 'bean';
+    import Button from "../components/Button.svelte";
+  
+  
+    export let name = 'Bean';
 </script>
 
 <body>
@@ -11,13 +14,18 @@
                 src= "./images/slug.png" alt="slug image"
             />  
         </div>
-        <button>
+        <button id='alert' on:click>
             <span class="transition"></span>
             <span class="gradient"></span>
             <span class="label">ALERT</span>
         </button>
     </div>
+    <div id="modal" class="hidden">
+
+    </div>
 </body>
+
+
 
 <style>
     body {
