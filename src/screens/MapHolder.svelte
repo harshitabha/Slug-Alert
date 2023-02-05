@@ -4,7 +4,7 @@
 <style>
 img {
     display: flex;
-    max-width: 10%;
+    max-width: 100%;
     /* width:10px; */
     height: auto;
 }
