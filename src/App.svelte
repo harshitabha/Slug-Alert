@@ -8,7 +8,7 @@
     import Landing from "./screens/Landing.svelte";
     import ResponderPage from "./screens/ResponderPage.svelte";
     import Student from "./screens/Student.svelte";
-    import MapHolder from "./screens/mapHolder.svelte";
+    import MapHolder from "./mapHolder.svelte";
     console.log(landingB)
 
     const toggleHome = () => {
