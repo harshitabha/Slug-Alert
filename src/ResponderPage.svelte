@@ -2,8 +2,8 @@
 	import Box from './responderAlert.svelte';
     let text = document.querySelector('#text');
     let userData = [
-        {name: "Billy Bob", time: 15, dist: .5, pfp: "./images/slug.png"},
-        {name: "Person Two", time: 30, dist: 1, pfp: "./images/boy.jpg"},
+        {name: "Billy Bob", time: 15, dist: .5, pfp: ""},
+        {name: "Person Two", time: 30, dist: 1, pfp: ""},
         {name: "Jeffrey Lastname", time: 20, dist: .25, pfp: ""},
         {name: "Me Myself", time: 5, dist: .3, pfp: ""},
     ]
