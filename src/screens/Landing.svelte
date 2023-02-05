@@ -2,6 +2,7 @@
 	import Button from "../components/Button.svelte";
     import InputField from "../components/InputField.svelte";
     import { writeToDB } from "../firebaseConfig"
+    import App from "../App.svelte"
     // const firebase = require("./util/firebase")
     // writeToDB({"name": "cruzhacks"})
 
@@ -50,18 +51,29 @@
     }
 
     let chooser = 'none';
+    export function getChoose() {
+        return chooser
+    }
+
+    let end = false;
+    let student = false;
+    let responder = false;
+
     const attemptSubmit = () => {
-        console.log(chooser)
+        // console.log(chooser)
         if (chooser == 'student') {
-            console.log(chooser);
+            end=true;
+            student=true;
+            responder=false;
         } else if (chooser == 'responder') {
-            loadScript('../src/responderPg.js')
-            console.log("THIS SHOULD WORK");
+            end = true;
+            student=false;
+            responder=true;
         }
     }
 
 </script>
-
+<svelte:options accessors />
 <main style="display:flex; flex-direction:column;">
     <!-- App Name -->
     <div class="row" style="margin-bottom: 3em;">
@@ -112,6 +124,9 @@
         <LongButton btnTxt="Log In" grad={true} id="logInBtn"/> <br>
         <LongButton btnTxt="Sign In" outline={true} id="signInBtn"/>
     </div> -->
+    {#if end}
+        <App landing={false} rHome={responder} sHome={student} rMap={false}/>
+    {/if}
 
 </main>
 
