@@ -2,22 +2,26 @@
     @import url('https://fonts.cdnfonts.com/css/nats');
     #box {
         background-color: #FFE8E8;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         padding: 25px;
         border-radius: 20px;
-        /* height: 100px; */
+        width: 15em;
     }
-    #text {
+    .text {
         display:inline;
         font-family: 'NATS', sans-serif;
-        font-size: 30px;
-        height: 40px;
+        font-size: 1em;
+        /* height: 40px; */
     }
-    #greytext {
+    .greytext {
         display:inline;
         color:#757575;
         font-family: 'NATS', sans-serif;
-        font-size: 30px;
+        font-size: 1em;
         height: 40px;
+    }
+    .header {
+        font-weight: bold;
     }
     .flex-container {
         display: flex;
@@ -32,8 +36,9 @@
         width: 100%;
     }
 
-    .flex3 {
+    .row {
         display: flex;
+        justify-content: center;
     }
 
     .time {
@@ -50,20 +55,20 @@
 
 <body>
     <div id="box">
-        <div class="flex3">
+        <div class="row">
             <img id="image" src={ src==""?("https://api.dicebear.com/5.x/pixel-art/svg?seed=" + name):src } alt="Test Person's face" height=75px, width=75px>
             <br/>
             <div class="flex2">
-                <div id="text">{name}</div>
+                <div class="text" style="margin-bottom: 10px; font-weight:bold">{name}</div>
                 <div class="flex-container">
                     <div>
-                        <div id="text">Distance : </div> 
-                        <div id="greytext">{distance}</div>
+                        <div class="greytext header">Distance : </div> 
+                        <div class="greytext">{distance}<br> mi</div>
                     </div>
                 
                     <div class="time">
-                        <div id="text">Time : </div> 
-                        <div id="greytext">{time} mins</div>
+                        <div class="greytext header">Time : </div> 
+                        <div class="greytext">{time}<br> mins</div>
                     </div>
                 </div>
             </div>
