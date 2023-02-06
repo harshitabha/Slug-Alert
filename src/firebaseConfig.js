@@ -14,19 +14,6 @@ var firebaseConfig = {
     measurementId: "G-DBRHLS2EBF"
 }
 
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
-
-const docRef = doc(db, "users");
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // doc.data() will be undefined in this case
-  console.log("No such document!");
-}
-
 export const writeToDB = async (data) => {
     console.log('addDoc');
     const docRef = await addDoc(collection(db, "users"), data);
